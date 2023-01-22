@@ -13,7 +13,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="{{ route('home') }}">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedCo
   n     tent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -22,15 +22,25 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link mr-sm-2" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> (0)</a>
+                    <a class="nav-link mr-sm-2" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> ({{
+                        Cart::getTotalQuantity()}})</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mr-sm-2" href="#"><i class="fa fa-lock" aria-hidden="true"></i> Login</a>
+
+                    <a class="nav-link mr-sm-2" href="{{ route('login') }}"><i class="fa fa-lock"
+                            aria-hidden="true"></i> Login</a>
+
+                </li>
+                <li class="nav-item">
+
+                    <a class="nav-link mr-sm-2" href="{{ route('register') }}"><i class="fa fa-lock"
+                            aria-hidden="true"></i> Register</a>
+
                 </li>
             </ul>
         </div>

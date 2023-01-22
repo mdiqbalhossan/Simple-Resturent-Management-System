@@ -11,7 +11,16 @@
                 <p class="card-text"><small class="text-muted">Price: ${{ $product->price }}</small></p>
             </div>
             <div class="card-footer">
-                <a href="#" class="btn btn-primary"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To Cart</a>
+                <form action="{{ route('cart.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <input type="hidden" value="{{ $product->id }}" name="id">
+                    <input type="hidden" value="{{ $product->name }}" name="name">
+                    <input type="hidden" value="{{ $product->price }}" name="price">
+                    <input type="hidden" value="{{ $product->image }}" name="image">
+                    <input type="hidden" value="1" name="quantity">
+                    <button class="btn btn-primary"><i class="fa fa-cart-plus" aria-hidden="true"></i> Add To
+                        Cart</button>
+                </form>
             </div>
         </div>
     </div>
