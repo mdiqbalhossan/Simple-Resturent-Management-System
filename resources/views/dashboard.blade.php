@@ -24,7 +24,7 @@
                 <td>{{ $key+1 }}</td>
                 <td>{{ $order->product->name }}</td>
                 <td>{{ $order->quantity }}</td>
-                <td>{{ $order->status }}</td>
+                <td>{{ Str::title($order->status) }}</td>
                 <td>{{ ($order->payment_status == 0 ? 'Due' : 'Paid') }}</td>
                 <td>{{ $order->payment_amount }}</td>
                 <td>

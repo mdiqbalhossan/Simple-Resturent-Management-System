@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AuthenticatedSessionController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\Admin\RegisteredAdminController;
 use App\Http\Controllers\CartController;
@@ -52,9 +53,7 @@ Route::post('/admin/register', [RegisteredAdminController::class, 'store'])->nam
 /****Admin Route */
 
 Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('admin.dashboard');
+    Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
 
     Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('admin.logout');
     Route::get('/order', [AdminOrderController::class, 'index'])->name('admin.order');

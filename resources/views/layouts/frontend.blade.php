@@ -39,6 +39,17 @@
                             aria-hidden="true"></i>
                         Dashboard</a>
 
+
+                </li>
+                <li class="nav-item">
+
+                    <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                    <a href="{{ route('logout') }}" class="nav-link mr-sm-2"
+                        onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp; Logout</a>
+
                 </li>
                 @else
 
