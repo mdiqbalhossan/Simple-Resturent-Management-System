@@ -27,9 +27,20 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link mr-sm-2" href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i> ({{
+                    <a class="nav-link mr-sm-2" href="{{ route('cart.list') }}"><i class="fa fa-shopping-cart"
+                            aria-hidden="true"></i> ({{
                         Cart::getTotalQuantity()}})</a>
                 </li>
+                @if(Auth::check())
+                <li class="nav-item">
+
+                    <a class="nav-link mr-sm-2" href="{{ route('dashboard') }}"><i class="fa fa-user-circle"
+                            aria-hidden="true"></i>
+                        Dashboard</a>
+
+                </li>
+                @else
+
                 <li class="nav-item">
 
                     <a class="nav-link mr-sm-2" href="{{ route('login') }}"><i class="fa fa-lock"
@@ -39,9 +50,11 @@
                 <li class="nav-item">
 
                     <a class="nav-link mr-sm-2" href="{{ route('register') }}"><i class="fa fa-lock"
-                            aria-hidden="true"></i> Register</a>
+                            aria-hidden="true"></i>
+                        Register</a>
 
                 </li>
+                @endif
             </ul>
         </div>
     </nav>

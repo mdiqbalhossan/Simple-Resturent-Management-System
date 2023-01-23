@@ -61,8 +61,58 @@
                 @csrf
                 <button class="btn btn-danger">Remove All Cart</button>
             </form>
-            <a href="#" class="btn btn-success float-end">Buy Now</a>
         </div>
     </div>
+</div>
+{{-- Info Card --}}
+<div class="card mt-2">
+    @if (Auth::check())
+    <div class="card-body">
+        <h5 class="card-title">Personal and Shipping Info</h5>
+        <form action="{{ route('order') }}" method="POST">
+            @csrf
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" name="address" aria-describedby="addressHelp">
+                <div id="addressHelp" class="form-text">Please Given your correct address for delivery product.</div>
+            </div>
+            <div class="row g-3 align-items-center mb-3">
+                <div class="col-md-3">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" id="city" class="form-control" name="city">
+                </div>
+                <div class="col-md-3">
+                    <label for="state" class="form-label">State</label>
+                    <input type="text" id="state" class="form-control" name="state">
+                </div>
+                <div class="col-md-3">
+                    <label for="country" class="form-label">Country</label>
+                    <input type="text" id="country" class="form-control" name="country">
+                </div>
+                <div class="col-md-3">
+                    <label for="zipcode" class="form-label">ZipCode</label>
+                    <input type="text" id="zipcode" class="form-control" name="zipcode">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="text" class="form-control" id="phone" aria-describedby="phoneHelp" name="phone">
+                <div id="phoneHelp" class="form-text">Please Given your correct phone number for contact our delivery
+                    man.</div>
+            </div>
+            <div class="d-flex justify-content-between">
+                <a href="{{ route('home') }}" class="btn btn-danger">Cancel</a>
+                <button type="submit" class="btn btn-primary float-end">Buy Now</button>
+            </div>
+        </form>
+    </div>
+    @else
+    <div class="card-body">
+        <h5 class="card-title
+        ">Please Login or Register to Buy Product</h5>
+        <a href="{{ route('login') }}" class="btn btn-primary">Login</a>
+    </div>
+    @endif
+
 </div>
 @endsection
