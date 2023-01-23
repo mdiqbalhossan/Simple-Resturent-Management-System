@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "6334528a-2764-40d7-bfcf-7689224d1320",
+		"name": "Resturent Management App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8000/api/login",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMjY4YmVkYjg3NzllMGMwYmUyZTg3M2RlMDZhNzM4ZjkxYmE2Y2NjNDE3YzA2MGMwZmYwNWNmNjkyYTQyYTI1ZGEzMTc3ZTEwNTJiMzNjOGIiLCJpYXQiOjE2Njc5MzExODkuMjA5MjY3LCJuYmYiOjE2Njc5MzExODkuMjA5Mjc2LCJleHAiOjE2OTk0NjcxODguMjkzNTA2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.hFLCkd66aH2uGr2Hr2a4EJygQp9pNk133jzbNlpcz2eMjMjmO9_Qdhdadh9uDeK5MU70xZUZKM1bVoB1_QhHjjzkdEg5I6jAkUQDH_wudaFyouShh_TZCky01-Tvk600xibnsGera1nrNk-2eXAO2pU1eyt8d6O0HnNsMDAN45LZsH474R0NXNS5Kfr_Mz4UdgHu6pruR8lybeBGMnKIKx_P4cODD5AGrUl4u864k0iVipCMVEKL_Ap4Zjqwqw7Lqcux_3w697N7JasTPHCCO0YZ5o43BtRBkeSZnWaB9xywWxLFMeLa2Hv_jCUIrLtVuZOrfM7p4gweRMnp3ZbNL-j6hrClnwRWXBuiOn6N9NaywmvVXe8ffGJcbWjQMJCn8kxCXHaHlfcb6I8-O7oaNJgwhItfHSewuS4ocKlnT-3JOPntW_pBQTmTYaSL5ddw5XAI3nkmLy2n2dI_ib1HSbq3VmL9Sk8bpb_8mZOxSfr0e3ZDJxTj4-j56AtUxRa0ahCDmXfVW7xdK-0liitOCvVhbScLZBAO6WXVmIxFpsUWsRG_bFJ0eryIAmssHuDOa_fP8sT5O6V-i-WEjbMFPNmue-eg2qKJNlysV3bRSTFNx84LRcPhZcb0v-lMrTLnK7PjaQTs53s1zWabs9MqT4fIcuWU3ITcwhBMaHlhwbM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "user@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "123456789",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/user",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGUwYjNkZjAzYzNlYTc4YTk1MGRjMjAxYzNlYTBjYWE5NTQxMTcxMTAzMzI1MTgwZWE1ZTRhNjZlMTExOGRhZDUzMjZiMjY0OWY4NjM0ZDAiLCJpYXQiOjE2NzQ1MDYwODkuOTY4NDQyLCJuYmYiOjE2NzQ1MDYwODkuOTY4NDUyLCJleHAiOjE3MDYwNDIwODcuNzY0MTYzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.RduiMcF0S2wSnLPZtp-9uDSp4FCwCtjdOjSRIY6G9FnODGsd9LUVJW1Iux5V8b8wMbw5Y4KAoJPt19-ABM83sne4VirFWaWOaL2aR2VlN4V7VwpdMRDWrnyjGyy4oPv6-9SP3ROvCftbpRTF_7TF2g0kLWxoUiYTO9Uqi5_jAgLTmfDt4lEsr2-2Lep0H-dHAueIz2wk9Efefe4uEpaCM8juaBld7c9l9HD8zFL3rZEBJR6e9o_znYPw6QUdnWemehyg_mnVJcOR7Sn9S1QyNUPDPKOSonFk1aSQk4KGNlB2CK8sf2CvyLuxhQt_DieLNIPKHSJP6RP1fNB0vmkiLlVByODhOdZYOOOjn09-q5UQWPd9rVhutQVjgiImZw0xzA9VJhQ5UFpZUNRtJcLsvoQMMVOepOhv6UuYhqiN6odOLMoEDynPD8ma2HdyKLO7-C-3tn2HbC1MEte3a-Rv00qnSXv6oOaT1R8igzPm6sz7jdG7MgRHfW-hzgvC3b1omyvpdor0h76Gp9aRD1JsSG-orleyD2jbDcUALif8jBcD9uyTVVDpWag4e2eA48g_2R5OZu_Ifz0TKmxXp_h1JhLqWDmFuRIafSTtJfVYbGBVMxqv-rb1_WO_zkPaOcEk9Atds7yX00HlkXBQo-2RL-BUILPPaOXUBsdvayWD-LY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user"
+					],
+					"query": [
+						{
+							"key": "header",
+							"value": "ac",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "John Doe",
+							"type": "default"
+						},
+						{
+							"key": "email",
+							"value": "john@gmail.com",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZGUwYjNkZjAzYzNlYTc4YTk1MGRjMjAxYzNlYTBjYWE5NTQxMTcxMTAzMzI1MTgwZWE1ZTRhNjZlMTExOGRhZDUzMjZiMjY0OWY4NjM0ZDAiLCJpYXQiOjE2NzQ1MDYwODkuOTY4NDQyLCJuYmYiOjE2NzQ1MDYwODkuOTY4NDUyLCJleHAiOjE3MDYwNDIwODcuNzY0MTYzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.RduiMcF0S2wSnLPZtp-9uDSp4FCwCtjdOjSRIY6G9FnODGsd9LUVJW1Iux5V8b8wMbw5Y4KAoJPt19-ABM83sne4VirFWaWOaL2aR2VlN4V7VwpdMRDWrnyjGyy4oPv6-9SP3ROvCftbpRTF_7TF2g0kLWxoUiYTO9Uqi5_jAgLTmfDt4lEsr2-2Lep0H-dHAueIz2wk9Efefe4uEpaCM8juaBld7c9l9HD8zFL3rZEBJR6e9o_znYPw6QUdnWemehyg_mnVJcOR7Sn9S1QyNUPDPKOSonFk1aSQk4KGNlB2CK8sf2CvyLuxhQt_DieLNIPKHSJP6RP1fNB0vmkiLlVByODhOdZYOOOjn09-q5UQWPd9rVhutQVjgiImZw0xzA9VJhQ5UFpZUNRtJcLsvoQMMVOepOhv6UuYhqiN6odOLMoEDynPD8ma2HdyKLO7-C-3tn2HbC1MEte3a-Rv00qnSXv6oOaT1R8igzPm6sz7jdG7MgRHfW-hzgvC3b1omyvpdor0h76Gp9aRD1JsSG-orleyD2jbDcUALif8jBcD9uyTVVDpWag4e2eA48g_2R5OZu_Ifz0TKmxXp_h1JhLqWDmFuRIafSTtJfVYbGBVMxqv-rb1_WO_zkPaOcEk9Atds7yX00HlkXBQo-2RL-BUILPPaOXUBsdvayWD-LY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
