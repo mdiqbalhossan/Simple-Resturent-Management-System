@@ -9,6 +9,7 @@
     <title>Resturent Management System</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    @stack('css')
 </head>
 
 <body>
@@ -68,6 +69,7 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js">
     </script>
+    @stack('js')
 </body>
 
 </html>

@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\AuthenticatedSessionController;
+use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\Admin\RegisteredAdminController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PaymentController;
@@ -28,9 +30,9 @@ Route::post('clear', [CartController::class, 'clearAllCart'])->name('cart.clear'
 
 /****Order Route */
 Route::post('order', [OrderController::class, 'order'])->name('order');
-
+Route::post('order/list', [DashboardController::class, 'getOrders'])->name('order.list');
 /****Payment Route */
-Route::get('payment', [PaymentController::class, 'payment'])->name('payment');
+Route::get('payment/{id?}', [PaymentController::class, 'payment'])->name('payment');
 Route::post('payment', [PaymentController::class, 'paymentSubmit'])->name('payment.submit');
 
 Route::middleware([
@@ -38,9 +40,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
 
 /**** Admin Login Route */
@@ -57,4 +57,8 @@ Route::middleware(['auth:admin'])->prefix('admin')->group(function () {
     })->name('admin.dashboard');
 
     Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('admin.logout');
+    Route::get('/order', [AdminOrderController::class, 'index'])->name('admin.order');
+    Route::get('/order/{id}', [AdminOrderController::class, 'show'])->name('admin.order.show');
+    Route::get('/order/edit/{id}', [AdminOrderController::class, 'edit'])->name('admin.order.edit');
+    Route::post('/order/edit/{id}', [AdminOrderController::class, 'update'])->name('admin.order.update');
 });
